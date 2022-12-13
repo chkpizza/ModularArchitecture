@@ -1,0 +1,22 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "ModularArchitecutre"
+include ':app'
+include ':feature:auth'
+include ':feature:home'
+include ':feature:mypage'
+include ':transition'
+include ':core:util'
+include ':core:preview_crawler'
