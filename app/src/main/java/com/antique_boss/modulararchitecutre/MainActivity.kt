@@ -19,19 +19,13 @@ import javax.inject.Inject
 import javax.inject.Named
 
 class MainActivity : AppCompatActivity() {
-
     @Inject
     @Named("AppViewModelFactory")
     lateinit var viewModelFactory: ViewModelProvider.Factory
-
-
-
     private val appViewModel by lazy { ViewModelProvider(this, viewModelFactory).get(AppViewModel::class.java) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         (applicationContext as GlobalApplication).appComponent.inject(this)
-        Log.d("AppViewModel", appViewModel.toString())
-
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
@@ -51,6 +45,7 @@ class MainActivity : AppCompatActivity() {
         observeTransition()
         observeConnectivity()
     }
+
 
     private fun observeTransition() {
         Transition.auth.observe(this) {
@@ -72,4 +67,6 @@ class MainActivity : AppCompatActivity() {
         }
         appViewModel.makeConnectivityMonitor(applicationContext)
     }
+
+
 }

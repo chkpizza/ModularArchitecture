@@ -12,6 +12,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class AppViewModel @Inject constructor() : ViewModel() {
+
     private val _isOnline = MutableLiveData<Boolean>()
     val isOnline: LiveData<Boolean> get() = _isOnline
 
@@ -22,4 +23,6 @@ class AppViewModel @Inject constructor() : ViewModel() {
             }
         }
     }
+
+
 }

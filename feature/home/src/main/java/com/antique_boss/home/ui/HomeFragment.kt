@@ -17,7 +17,6 @@ import javax.inject.Inject
 import javax.inject.Named
 
 class HomeFragment : Fragment() {
-
     @Inject
     @Named("HomeViewModelFactory")
     lateinit var viewModelFactory: ViewModelProvider.Factory
