@@ -11,9 +11,11 @@ import com.antique_boss.mypage.MyPageComponentProvider
 import com.antique_boss.mypage.viewmodel.MyPageViewModel
 import com.antique_boss.mypage.R
 import javax.inject.Inject
+import javax.inject.Named
 
 class MyPageFragment : Fragment() {
     @Inject
+    @Named("MyPageViewModelFactory")
     lateinit var viewModelFactory: ViewModelProvider.Factory
 
     private val viewModel by lazy { ViewModelProvider(this, viewModelFactory).get(MyPageViewModel::class.java)}

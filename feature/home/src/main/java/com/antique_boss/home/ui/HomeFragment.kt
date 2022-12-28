@@ -14,10 +14,12 @@ import com.antique_boss.home.HomeComponentProvider
 import com.antique_boss.home.viewmodel.HomeViewModel
 import com.antique_boss.home.R
 import javax.inject.Inject
+import javax.inject.Named
 
 class HomeFragment : Fragment() {
 
     @Inject
+    @Named("HomeViewModelFactory")
     lateinit var viewModelFactory: ViewModelProvider.Factory
 
     private val viewModel by navGraphViewModels<HomeViewModel>(R.id.home_nav_graph) { viewModelFactory }
