@@ -1,6 +1,7 @@
 package com.antique_boss.modulararchitecutre.di.components
 
 import com.antique_boss.home.di.HomeComponent
+import com.antique_boss.modulararchitecutre.MainActivity
 import com.antique_boss.modulararchitecutre.di.modules.RepositoryModule
 import com.antique_boss.modulararchitecutre.di.modules.RetrofitModule
 import com.antique_boss.modulararchitecutre.di.modules.ViewModelFactoryModule
@@ -24,13 +25,16 @@ interface AppComponent {
         fun create(): AppComponent
     }
 
+    fun inject(mainActivity: MainActivity)
+
     fun getHomeComponent(): HomeComponent.Factory
     fun myPageComponent(): MyPageComponent.Factory
 }
 
 @Module(
     subcomponents = [
-        HomeComponent::class
+        HomeComponent::class,
+        MyPageComponent::class
     ]
 )
 object SubcomponentsModule

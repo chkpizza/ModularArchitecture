@@ -14,11 +14,15 @@ import com.antique_boss.transition.Transition
 import com.antique_boss.util.ConnectivityMonitor
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.snackbar.Snackbar
+import javax.inject.Inject
+import javax.inject.Named
 
 class MainActivity : AppCompatActivity() {
     private val appViewModel by lazy { ViewModelProvider(this).get(AppViewModel::class.java) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        (applicationContext as GlobalApplication).appComponent.inject(this)
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 

@@ -40,7 +40,7 @@ dependencies {
     implementation project(":feature:home")
     implementation project(":feature:mypage")
     implementation project(":transition")
-    implementation project(":core:util")
+    implementation project(":test:util")
 
     implementation "androidx.navigation:navigation-fragment-ktx:2.5.3"
     implementation "androidx.navigation:navigation-ui-ktx:2.5.3"

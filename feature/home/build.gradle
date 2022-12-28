@@ -33,7 +33,7 @@ android {
 
 dependencies {
     implementation project(":transition")
-    implementation project(":core:preview_crawler")
+    implementation project(":test:preview_crawler")
 
     implementation 'com.google.dagger:dagger:2.44'
     kapt 'com.google.dagger:dagger-compiler:2.44'

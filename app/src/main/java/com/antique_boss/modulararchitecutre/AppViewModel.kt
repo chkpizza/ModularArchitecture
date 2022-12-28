@@ -9,8 +9,9 @@ import com.antique_boss.util.ConnectivityMonitor
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class AppViewModel: ViewModel() {
+class AppViewModel @Inject constructor() : ViewModel() {
     private val _isOnline = MutableLiveData<Boolean>()
     val isOnline: LiveData<Boolean> get() = _isOnline
 
