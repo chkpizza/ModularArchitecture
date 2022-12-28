@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
+import com.antique_boss.core.di.ViewModelFactory
 import com.antique_boss.transition.Transition
 import com.antique_boss.util.ConnectivityMonitor
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -18,10 +19,18 @@ import javax.inject.Inject
 import javax.inject.Named
 
 class MainActivity : AppCompatActivity() {
-    private val appViewModel by lazy { ViewModelProvider(this).get(AppViewModel::class.java) }
+
+    @Inject
+    @Named("AppViewModelFactory")
+    lateinit var viewModelFactory: ViewModelProvider.Factory
+
+
+
+    private val appViewModel by lazy { ViewModelProvider(this, viewModelFactory).get(AppViewModel::class.java) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         (applicationContext as GlobalApplication).appComponent.inject(this)
+        Log.d("AppViewModel", appViewModel.toString())
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)

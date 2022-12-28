@@ -14,7 +14,6 @@ class HomeViewModel @Inject constructor(
     fun test() {
         viewModelScope.launch {
             val response = getPostUseCase()
-            Log.d("JsonPlaceHolder", response.body().toString())
         }
     }
 }

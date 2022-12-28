@@ -2,6 +2,7 @@ package com.antique_boss.modulararchitecutre.di.components
 
 import com.antique_boss.home.di.HomeComponent
 import com.antique_boss.modulararchitecutre.MainActivity
+import com.antique_boss.modulararchitecutre.di.modules.AppViewModelModule
 import com.antique_boss.modulararchitecutre.di.modules.RepositoryModule
 import com.antique_boss.modulararchitecutre.di.modules.RetrofitModule
 import com.antique_boss.modulararchitecutre.di.modules.ViewModelFactoryModule
@@ -16,7 +17,8 @@ import javax.inject.Singleton
         SubcomponentsModule::class,
         ViewModelFactoryModule::class,
         RepositoryModule::class,
-        RetrofitModule::class
+        RetrofitModule::class,
+        AppViewModelModule::class
     ]
 )
 interface AppComponent {

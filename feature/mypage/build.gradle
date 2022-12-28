@@ -31,6 +31,7 @@ android {
 }
 
 dependencies {
+    implementation project(":core")
     implementation project(":transition")
 
     implementation 'com.google.dagger:dagger:2.44'
